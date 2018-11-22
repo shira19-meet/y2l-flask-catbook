@@ -21,4 +21,9 @@ def get_cat(id):
 	cats = session.query(Cat).filter_by(id=id).first()
 	return cats
 
+def new_vote(id):
+	cat = session.query(Cat).filter_by(id=id).first()
+	cat.vote= cat.vote+1
+	session.commit()
+
 

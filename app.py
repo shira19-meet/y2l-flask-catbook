@@ -31,8 +31,9 @@ def catbook_add():
 @app.route('/vote', methods=['GET', 'POST'])
 def catbook_vote():
 	if request.method == 'GET':
-		return render_template("cat.html")
+		return render_template("cats.html")
 	else:
+		print("post!")
 		vote = request.form['vote']
 		new_vote(id)  
 		cats = get_all_cats()  
